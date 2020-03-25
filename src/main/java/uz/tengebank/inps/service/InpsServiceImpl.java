@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 import uz.tengebank.inps.model.dto.InpsRq;
 
-import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 
 @Service
@@ -30,12 +29,6 @@ public class InpsServiceImpl implements InpsService {
         headers.add("Authorization", getBasicAuthHeaderValue(settingsService.getUser(), settingsService.getPassword()));
         HttpEntity<String> requestEntity = new HttpEntity<>(getRequestBody(inps), headers);
         return rest.exchange(settingsService.getServiceURL(), HttpMethod.POST, requestEntity, String.class);
-    }
-
-    @PostConstruct
-    public void setupProxy() {
-        System.setProperty("http.proxyHost", "10.226.74.10");
-        System.setProperty("http.proxyPort", "8080");
     }
 
     private static String getRequestBody(String inps) {
