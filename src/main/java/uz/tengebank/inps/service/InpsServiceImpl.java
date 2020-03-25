@@ -7,7 +7,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
-import uz.tengebank.inps.dto.InpsRq;
+import uz.tengebank.inps.model.dto.InpsRq;
 
 import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;

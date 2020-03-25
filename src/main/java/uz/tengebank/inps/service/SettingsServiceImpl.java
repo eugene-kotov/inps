@@ -8,9 +8,9 @@ import static uz.tengebank.inps.enums.SystemEnv.*;
 @Service
 public class SettingsServiceImpl implements SettingsService {
 
-    private static final String DEFAULT_SERVICE_URL = "";
-    private static final String DEFAULT_SERVICE_USER = "";
-    private static final String DEFAULT_SERVICE_PASSWORD = "";
+    private static final String DEFAULT_SERVICE_URL = "https://jsonplaceholder.typicode.com/posts";
+    private static final String DEFAULT_SERVICE_USER = "user";
+    private static final String DEFAULT_SERVICE_PASSWORD = "password";
 
     @Override
     public String getServiceURL() {

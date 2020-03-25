@@ -1,4 +1,4 @@
-package uz.tengebank.inps.dto;
+package uz.tengebank.inps.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

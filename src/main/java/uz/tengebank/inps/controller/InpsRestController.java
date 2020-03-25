@@ -4,8 +4,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import uz.tengebank.inps.model.dto.InpsRq;
 import uz.tengebank.inps.service.InpsService;
-import uz.tengebank.inps.dto.InpsRq;
 
 @RestController
 public class InpsRestController {
