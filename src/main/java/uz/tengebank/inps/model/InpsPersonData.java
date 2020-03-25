@@ -1,5 +1,6 @@
 package uz.tengebank.inps.model;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,26 +8,30 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 @Document
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class InpsPersonData {
+    @SerializedName(value = "pass_sn")
+    private String passSn;
+    @SerializedName(value = "pass_num")
     private String passNum;
+    @SerializedName(value = "name")
     private String name;
+    @SerializedName(value = "resident")
     private String resident;
+    @SerializedName(value = "birth_date")
     private Date birthDate;
+    @SerializedName(value = "gender")
     private String gender;
+    @SerializedName(value = "adress")
     private String address;
     @Id
+    @SerializedName(value = "inps")
     private String inps;
+    @SerializedName(value = "invoices")
+    private List<Invoice> invoices;
 }
-//"pass_sn": "AA",
-//        "pass_num": "1111111",
-//        "name": "AAA AAA AAA",
-//        "resident": "N",
-//        "birth_date": "1991-01-01",
-//        "gender": "M",
-//        "adress": " ANGREN 0 ",
-//        "inps": "11111111111111",
