@@ -34,4 +34,8 @@ public class InpsPersonData {
     private String inps;
     @SerializedName(value = "invoices")
     private List<Invoice> invoices;
+    @SerializedName(value = "result_code")
+    private Integer resultCode;
+    @SerializedName(value = "result_message")
+    private String resultMessage;
 }
