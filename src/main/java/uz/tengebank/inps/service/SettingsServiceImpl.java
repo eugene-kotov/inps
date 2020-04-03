@@ -8,7 +8,7 @@ import static uz.tengebank.inps.enums.SystemEnv.*;
 @Service
 public class SettingsServiceImpl implements SettingsService {
 
-    private static final String DEFAULT_SERVICE_URL = "https://jsonplaceholder.typicode.com/posts";
+    private static final String DEFAULT_SERVICE_URL = "http://localhost:8083/data";
     private static final String DEFAULT_SERVICE_USER = "user";
     private static final String DEFAULT_SERVICE_PASSWORD = "password";
 

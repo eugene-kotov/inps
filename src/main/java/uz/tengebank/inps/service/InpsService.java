@@ -1,7 +1,9 @@
 package uz.tengebank.inps.service;
 
-import org.springframework.http.ResponseEntity;
+import uz.tengebank.inps.model.InpsPersonData;
+
+import java.util.List;
 
 public interface InpsService {
-    ResponseEntity<String> getInfo(String inps);
+    List<InpsPersonData> getImpsInfo(String inps);
 }
