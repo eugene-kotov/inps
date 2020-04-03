@@ -1,6 +1,5 @@
 package uz.tengebank.inps.service;
 
-import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.codec.binary.Base64;

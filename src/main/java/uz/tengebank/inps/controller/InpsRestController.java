@@ -1,5 +1,7 @@
 package uz.tengebank.inps.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,18 +19,21 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@Api(value = "inps resources")
 public class InpsRestController {
 
     private final InpsService inpsService;
 
-    @PostMapping(path = "/inps", consumes = "application/json", produces = "application/json")
-    public List<InpsPersonData> sendInps(@RequestBody InpsRq rq) {
-        return inpsService.getImpsInfo(rq.getInps());
-    }
-
     @GetMapping("/healthcheck")
+    @ApiOperation(value = "show app status", response = HealthCheckResponse.class)
     public ResponseEntity<HealthCheckResponse> healthCheck() {
         HealthCheckResponse response = new HealthCheckResponse("OK", LocalDateTime.now());
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PostMapping(path = "/inps", consumes = "application/json", produces = "application/json")
+    @ApiOperation(value = "show data by inps", response = InpsPersonData.class)
+    public ResponseEntity<List<InpsPersonData>> sendInps(@RequestBody InpsRq rq) {
+        return new ResponseEntity<>(inpsService.getImpsInfo(rq.getInps()), HttpStatus.OK);
     }
 }

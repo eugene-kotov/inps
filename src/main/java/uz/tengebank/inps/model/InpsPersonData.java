@@ -2,6 +2,7 @@ package uz.tengebank.inps.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ApiModel
 public class InpsPersonData implements Serializable {
     @JsonProperty(value = "pass_sn")
     private String passSn;
